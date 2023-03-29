@@ -7,7 +7,6 @@ import Video from './components/Video'
 
 function App() {
   const ref = useRef<null | HTMLDivElement>(null);
-  console.log("🚀 ~ file: App.tsx:10 ~ App ~ ref:", ref)
   const [jump, setJump] = useState(false);
 
   useEffect(() => {
