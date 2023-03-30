@@ -1,10 +1,21 @@
-import HeroTitle from "./HeroTitle";
-import Link from "./Link";
+import Link, { ILink } from "./Link";
 
-const Header = () => {
+const Header = ({ title, nav, onClick }: { title: string, nav: ILink[], onClick: Function }) => {
   return (
-    <div className="flex bg-yellow-400 uppercase font-bold">
-      <Link href="/" className="p-3 text-xl font-bold text-black">Marmaduke Dando</Link>
+    <div className="flex fixed w-full z-10 bg-yellow-400 uppercase font-bold text-xs md:text-xl p-3 justify-between text-black">
+      <div>
+        <Link onClick={() => onClick("hero")}>{title}</Link>
+      </div>
+      <div className="flex gap-4">
+        {nav?.map((item) => {
+          return (
+            <Link
+              key={item.children}
+              {...item}
+              onClick={() => onClick(item.children)} />
+          )
+        })}
+      </div>
     </div >
   )
 }
