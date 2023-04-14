@@ -44,7 +44,8 @@ function App() {
         <meta property="og:title" content="Marmaduke Dando"></meta>
         <meta property="og:description" content="Bard of disempire"></meta>
         <meta property="og:url" content="https://www.marmadukedando.com/" />
-        <meta property="og:image" content={seo.ogImage} ></meta>
+        <meta property="og:image:secure" content={seo.ogImage} />
+
         <title>{data.title}</title>
       </Helmet>
       <section>
