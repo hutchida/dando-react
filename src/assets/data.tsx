@@ -4,7 +4,7 @@ export const data = {
 }
 
 export const seo = {
-  "ogImage": "https://www.datocms-assets.com/79323/1662998532-berlin-bike-shadows.jpg"
+  "ogImage": "https://www.marmadukedando.com/img/hero.jpeg"
 }
 export const nav = [
   {
