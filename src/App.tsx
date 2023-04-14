@@ -45,7 +45,7 @@ function App() {
         <meta property="og:title" content="Marmaduke Dando"></meta>
         <meta property="og:description" content="Bard of disempire"></meta>
         <meta property="og:url" content="https://www.marmadukedando.com/" />
-        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:image" content={seo.ogImage} ></meta>
       </Helmet>
       <section>
         <Header title="Marmaduke Dando" nav={nav} onClick={setJump} />
