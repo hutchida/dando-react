@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css'
-import { nav, seo } from './assets/data';
+import { data, nav, seo } from './assets/data';
 import Header from './components/Header';
 import Hero from './components/Hero'
 import News from './components/News'
@@ -41,7 +41,10 @@ function App() {
   return (
     <div>
       <Helmet>
-        <title>My Page Title</title>
+        <title>{data.title}</title>
+        <meta property="og:title" content="Marmaduke Dando"></meta>
+        <meta property="og:description" content="Bard of disempire"></meta>
+        <meta property="og:url" content="https://www.marmadukedando.com/" />
         <meta property="og:image" content={seo.ogImage} />
       </Helmet>
       <section>
