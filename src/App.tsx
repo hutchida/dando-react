@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css'
-import { nav } from './assets/data';
+import { nav, seo } from './assets/data';
 import Header from './components/Header';
 import Hero from './components/Hero'
 import News from './components/News'
 import Video from './components/Video'
+import { Helmet } from "react-helmet";
 
 function App() {
   const heroRef = useRef<null | HTMLDivElement>(null);
   const vibeRef = useRef<null | HTMLDivElement>(null);
-  const liveRef = useRef<null | HTMLDivElement>(null);
+  const newsRef = useRef<null | HTMLDivElement>(null);
   const buyRef = useRef<null | HTMLDivElement>(null);
   const moreRef = useRef<null | HTMLDivElement>(null);
   const [jump, setJump] = useState("");
@@ -23,8 +24,8 @@ function App() {
       vibeRef.current?.scrollIntoView({ behavior: "smooth" });
       setJump("");
     }
-    if (jump === "live") {
-      liveRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (jump === "news") {
+      newsRef.current?.scrollIntoView({ behavior: "smooth" });
       setJump("");
     }
     if (jump === "buy") {
@@ -39,7 +40,13 @@ function App() {
 
   return (
     <div>
-      <Header title="Marmaduke Dando" nav={nav} onClick={setJump} />
+      <Helmet>
+        <title>My Page Title</title>
+        <meta property="og:image" content={seo.ogImage} />
+      </Helmet>
+      <section>
+        <Header title="Marmaduke Dando" nav={nav} onClick={setJump} />
+      </section>
       <section ref={heroRef}>
         {/* <Hero title='Where the wasteland ends' link={{ href: "#albums", children: "listen" }} /> */}
         <Hero title='Next&nbsp;show 29/04/23 Berlin' link={{ onClick: () => setJump("live"), children: "more" }} />
@@ -47,14 +54,14 @@ function App() {
       <section ref={vibeRef}>
         <Video youtube="Wi9ggsd0Lsw" />
       </section>
-      <section ref={liveRef}>
+      <section ref={newsRef}>
         <News title="News" description="Next live show will be at the Rockhaus in Berlin, Buchberger Straße 6, 10365, on April 29th, 2023, doors at 8pm. First on the bill, followed by Silky Psyche, and Inspectre" link={{ href: "https://fb.me/e/2tW0FW1n3", target: "_blank", children: "Event" }} />
       </section>
       <section ref={buyRef}>
         <News title="Buy" description="...and listen" link={{ href: "https://marmadukedando.bandcamp.com/", target: "_blank", children: "Bandcamp" }} />
       </section>
       <section ref={moreRef}>
-        <News title="Socials" description="Follow on..." link={{ href: "https://www.facebook.com/Marmaduke-Dando-369791493240/", target: "_blank", children: "Facebook" }} />
+        <News title="More" description="Follow on..." link={{ href: "https://www.facebook.com/Marmaduke-Dando-369791493240/", target: "_blank", children: "Facebook" }} />
       </section>
     </div>
   )
