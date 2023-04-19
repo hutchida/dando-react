@@ -4,7 +4,7 @@ export const data = {
 }
 
 export const seo = {
-  "ogImage": "https://hutchida.com/profilepic-2.jpeg"
+  "ogImage": "img/og-image.jpg"
 }
 export const nav = [
   {
