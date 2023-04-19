@@ -53,7 +53,7 @@ function App() {
       </section>
       <section ref={heroRef}>
         {/* <Hero title='Where the wasteland ends' link={{ href: "#albums", children: "listen" }} /> */}
-        <Hero title='Next&nbsp;show 29/04/23 Berlin' link={{ onClick: () => setJump("live"), children: "more" }} />
+        <Hero title='Next&nbsp;show 29/04/23 Berlin' link={{ onClick: () => setJump("news"), children: "more" }} />
       </section>
       <section ref={vibeRef}>
         <Video youtube="Wi9ggsd0Lsw" />
