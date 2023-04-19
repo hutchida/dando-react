@@ -4,7 +4,7 @@ export const data = {
 }
 
 export const seo = {
-  "ogImage": "img/og-image.jpg"
+  "ogImage": "https://www.marmadukedando.com/img/og-image.jpg"
 }
 export const nav = [
   {
